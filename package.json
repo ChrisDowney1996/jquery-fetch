@@ -4,6 +4,7 @@
   "description": "给jquery ajax增加一个自动取消重复请求的功能",
   "main": "dict/jquery-fetch.min.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/ChrisDowney1996/jquery-fetch/issues"
   },
-  "homepage": "https://github.com/ChrisDowney1996/jquery-fetch#readme"
+  "homepage": "https://github.com/ChrisDowney1996/jquery-fetch#readme",
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-loader": "^2.1.2",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "webpack-cli": "^3.2.3"
+  }
 }

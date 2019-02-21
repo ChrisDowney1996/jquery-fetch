@@ -2,16 +2,10 @@
  * @description 请求工具类
  * @dependencies ['jQuery']
  */
-!function (global, factory) {
-  if (typeof exports === 'object' && typeof module !== 'undefined') {
-    module.exports = factory(require('$'))
-  } else if (typeof define === 'function' && define.amd) {
-    define(['$'], factory)
-  } else {
-    factory(global.$)
-  }
-}(this, function ($) {
+
+!function (global, $) {
   'use strict'
+
   initTools()
 
   var pending = []
@@ -122,4 +116,5 @@
   $.extend({
     ajax: fetch
   })
-})
+
+}(window, window.$)
