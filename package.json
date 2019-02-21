@@ -24,6 +24,7 @@
     "eslint": "^5.14.1",
     "eslint-loader": "^2.1.2",
     "uglifyjs-webpack-plugin": "^2.1.1",
+    "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3"
   }
 }
