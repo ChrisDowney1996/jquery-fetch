@@ -14,22 +14,21 @@
   function fetch (url, set) {
     var settings = {}
     var baseURL = global.baseURL || ''
-
     var fullURL = ''
     if (typeof url === 'object') {
       settings = url
       if (url.url) {
-        fullURL = url.url.indexOf(baseURL) == -1 ? fullURL + url.url : url.url
+        fullURL = url.url.indexOf(baseURL) == -1 ? baseURL + url.url : url.url
       }
     }
     if (typeof set === 'object') {
       settings = set
       if (set.url) {
-        fullURL = set.url.indexOf(baseURL) == -1 ? fullURL + set.url : set.url
+        fullURL = set.url.indexOf(baseURL) == -1 ? baseURL + set.url : set.url
       }
     }
     if (typeof url === 'string') {
-      fullURL = url.indexOf(baseURL) == -1 ? fullURL + url : url
+      fullURL = url.indexOf(baseURL) == -1 ? baseURL + url : url
     }
     settings.url = fullURL
     // 整理回调函数相关

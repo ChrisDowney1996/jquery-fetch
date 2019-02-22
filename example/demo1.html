@@ -96,10 +96,13 @@
     <div class="btn__text" data-text="CLICK_SEND_REQUEST">CLICK_SEND_REQUEST</div>
   </div>
 </div>
-
+<script>
+  window.baseURL = 'https://easy-mock.com'
+</script>
 <script src="http://lib.baomitu.com/jquery/1.11.2/jquery.min.js"></script>
 <script src="../dist/jquery-fetch.min.js"></script>
 <script>
+
   $('.btn').on('click', function () {
     var requestNum = $('.request-num').val()
     var requestTimer
@@ -111,7 +114,7 @@
         clearInterval(requestTimer)
       }
       $.ajax({
-        url: 'https://easy-mock.com/mock/5bf75efb5cfdd6564a60da75/example/mock',
+        url: '/mock/5bf75efb5cfdd6564a60da75/example/mock',
         isAutoCancel: true, // true: 自动取消重复请求(默认), false: 正常ajax请求
         success: function (data) {
           console.log('请求成功：', data)
