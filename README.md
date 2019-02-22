@@ -1,11 +1,15 @@
 # 简介
 这是一个jquery插件，基于$.ajax方法扩展，取消多次重复的请求。
 <div align="center">
+
 [![MIT](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+
 </div>
 
+
 # 浏览器支持
-支持所有现代浏览器，IE5+
+1.  支持所有现代浏览器
+2.  IE5+
 
 # 使用
 点击 Clone or download 选择点击 Download ZIP，下载到桌面，解压，获取dist目录下的文件到项目中，
@@ -33,4 +37,4 @@
 ```
 
 # License
-MIT
+[MIT](http://opensource.org/licenses/MIT)
