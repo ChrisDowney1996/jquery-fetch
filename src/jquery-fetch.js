@@ -13,7 +13,7 @@
 
   function fetch (url, set) {
     var settings = {}
-    var baseURL = ''
+    var baseURL = global.baseURL || ''
 
     var fullURL = ''
     if (typeof url === 'object') {
