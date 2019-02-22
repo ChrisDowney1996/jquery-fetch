@@ -14,9 +14,9 @@
 2.  IE5+
 
 # 使用
-点击 `Clone or download` 选择点击 `Download ZIP`，下载到桌面，解压，获取dist目录下的文件到项目中，
-这是基于$.ajax中增加了一个属性 `isAutoCancel`，默认是开启，设置成false，关闭。 
-所以 $.post 和 $.get 方法无效。
+1. `git clone https://github.com/ChrisDowney1996/jquery-fetch.git` 或者下 `zip包`
+2.  引入dist目录下文件到项目里面，当使用 $.ajax 所有请求自动取消重复请求
+3.  基于 $.ajax 的属性扩展，取消这个功能，只需要在 $.ajax 参数属性里面加 `isAutoCancel: false`
 ```
 <!-- 引入插件！注意要在引入jquery之后再引入它 -->
 <script src="../dist/jquery-fetch.min.js"></script>
