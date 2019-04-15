@@ -12,9 +12,7 @@
   var $ajax = $.ajax
 
   function fetch (url, set) {
-    var settings = {
-      contentType: 'application/json; charset=UTF-8',
-    }
+    var settings = {}
     var baseURL = global.baseURL || ''
     var fullURL = ''
     if (typeof url === 'object') {
@@ -41,6 +39,14 @@
     // 获取配置项参数
     var method = settings.type || 'get'
     var isAutoCancel = settings.isAutoCancel
+
+    // 设置参数格式
+    if (settings.type == 'post') {
+      settings.contentType = settings.contentType || 'application/json; charset=UTF-8'
+      if (settings.data != null && settings.contentType.indexOf('application/json') != -1 && typeof settings.data != 'string') {
+        settings.data = JSON.stringify(settings.data)
+      }
+    }
 
     // 生成取消令牌
     var brand = window.encodeURIComponent(fullURL + '&' + method)
