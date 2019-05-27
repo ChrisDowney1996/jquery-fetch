@@ -5,7 +5,13 @@ module.exports = function(grunt) {
       build: {
         src: 'src/jquery-fetch.js',
         dest: 'dist/jquery-fetch.min.js'
-      }
+      },
+      options: {
+        banner: '/*!\n * <%= pkg.name %> <%= pkg.version %>' +
+          '\n * (c) 2019-<%= grunt.template.today("yyyy") %> <%= pkg.author %>' +
+          '\n * Released under the MIT License' +
+          '\n */'
+      },
     },
     jshint: {
       options: {

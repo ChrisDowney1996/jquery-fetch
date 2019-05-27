@@ -5,7 +5,7 @@
 </div>
 
 # 简介
-这是一个jquery插件，基于$.ajax方法扩展，取消多次重复的请求。
+这是一个jquery插件，基于$.ajax方法扩展，取消多次重复的请求（默认关闭）。
 
 
 
@@ -29,7 +29,7 @@
       clearInterval(requestTimer)
     }
     $.ajax('https://easy-mock.com/mock/5bf75efb5cfdd6564a60da75/example/mock',{
-      isAutoCancel: true, // true: 自动取消重复请求(默认), false: 正常ajax请求
+      isAutoCancel: true, // true: 自动取消重复请求, false: 正常ajax请求(默认)
       success: function (data) {
         console.log('请求成功：', data)
       }

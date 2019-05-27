@@ -6,8 +6,6 @@
 !function (global, $) {
   'use strict'
 
-  initTools()
-
   var pending = []
   var $ajax = $.ajax
 
@@ -38,7 +36,7 @@
 
     // 获取配置项参数
     var method = settings.type || 'get'
-    var isAutoCancel = settings.isAutoCancel == null ?  true : settings.isAutoCancel
+    var isAutoCancel = settings.isAutoCancel == null ?  false : settings.isAutoCancel
 
     // 生成取消令牌
     var brand = window.encodeURIComponent(fullURL + '&' + method)
@@ -48,7 +46,7 @@
       cancelFetch(brand)
     }
     // 执行请求相关
-    var ajaxInstance = $ajax(Object.assign({}, settings, {
+    var ajaxInstance = $ajax($.extend({}, settings, {
       success: function (data) {
         success && success(data)
       },
@@ -86,33 +84,6 @@
         pending[i].abort()
         pending.splice(i, 1)
       }
-    }
-  }
-
-  // 初始化需要的工具类
-  function initTools () {
-    if (typeof Object.assign != 'function') {
-      Object.assign = assign
-    }
-    function assign (target) {
-      if (Object.prototype.toString.call(target) != '[object Object]') { // TypeError if undefined or null
-        throw new TypeError('Cannot convert not object to object');
-      }
-      var result = target
-      for (var index = 1; index < arguments.length; index++) {
-        var nextObject = arguments[index]
-        if (Object.prototype.toString.call(nextObject) == '[object Object]') { // Skip over if undefined or null
-          for (var nextKey in nextObject) {
-            // Avoid bugs when hasOwnProperty is shadowed
-            if (Object.prototype.hasOwnProperty.call(nextObject, nextKey)) {
-              result[nextKey] = nextObject[nextKey]
-            }
-          }
-        } else {
-          console.warn(nextObject, 'Cannot convert not object to object')
-        }
-      }
-      return result
     }
   }
 

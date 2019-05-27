@@ -1,6 +1,6 @@
 {
   "name": "jquery-fetch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "给jquery ajax增加一个自动取消重复请求的功能",
   "main": "dict/jquery-fetch.min.js",
   "scripts": {
